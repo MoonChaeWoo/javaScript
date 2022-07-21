@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://vjs.zencdn.net/7.20.1/video-js.css" rel="stylesheet" />
+    <title>Document</title>
+</head>
+<body>
+   
+   <button id='aplay'>play music</button>
+   <button id='apuase'>pause music</button>
+   <button id='spuase'>stop music</button><br>
+   <hr>
+   <button id='vplay'>play video</button>
+   <button id='vpuase'>pause video</button>
+   <button id='vstop'>stop video</button><br>
+   
+   
+<!--   비디오 태그에 src에 넣으면 영상이 나오며 controls를 넣어야 영상을 재생할 수 있는 버튼이 나온다.-->
+<!--  이것은 브라우저 자체의 컨트롤이다.-->
+<!--   video src='video/La%20Campanella.mp4' autoplay controls muted video-->
+   <video src='video/La%20Campanella.mp4' controls id="myVideo"></video>
+   <audio src='music/Puch%20(%ED%8E%80%EC%B9%98)%20-%20%EB%B0%A4%EC%9D%B4%20%EB%90%98%EB%8B%88%EA%B9%8C.mp3' id="myaudio"></audio>
+   
+   
+   <video id="my-video" class="video-js" controls preload="auto" width="640" height="264" poster="MY_VIDEO_POSTER.jpg" data-setup="{}">
+    <source src="video/La%20Campanella.mp4" type="video/mp4" />
+    <source src="MY_VIDEO.webm" type="video/webm" />
+    <p class="vjs-no-js">
+      To view this video please enable JavaScript, and consider upgrading to a
+      web browser that
+      <a href="https://videojs.com/html5-video-support/" target="_blank"
+        >supports HTML5 video</a
+      >
+    </p>
+  </video>
+
+  <script src="https://vjs.zencdn.net/7.20.1/video.min.js"></script>
+   
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="play_animation.js"></script>
+</body>
+</html>
