@@ -1,0 +1,2 @@
+<h1>jQuery and Ajax is Fun!</h1>
+<h2>test ajax JQUERY, $ajax로 파일 내용 로드</h2>
