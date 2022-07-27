@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <defs>
+    <style>
+      .cls-1 {
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="download-21" class="cls-1" d="M31.013,32V5.336H20.1V8h8.185V29.334H3.728V8h8.185V5.336H1V32H31.013ZM14.642,14.668H9.185l6.821,8,6.821-8H17.371V0H14.642V14.668Z"/>
+</svg>

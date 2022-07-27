@@ -1,0 +1,49 @@
+.img-box img {width:100%;height: 100%;}
+/*img{width:320px;height: 270px;}*/
+/* 팝업 컨텐츠 START */
+/* 팝업 공통 */
+.ui-widget.ui-draggable {background:#24515c !important;}
+.ui-dialog-titlebar {border-bottom:1px solid #497a86 !important;}
+.popup-box {position:absolute; z-index:2; background:#24515c; border-radius:10px; box-shadow:0 0 5px 5px rgba(0, 0, 0, 0.25);}
+.popup-box .popup-header {position:relative; float:left; width:calc(100% - 24px); height:33px; padding:0 12px; border-bottom:1px solid #497a86;}
+.popup-box .popup-header p {display:inline-block; height:14px; font-size:14px; font-weight:500; color:#fff; line-height:1em; margin:10px 0;}
+.popup-box .popup-header p img {display:inline-block; vertical-align:top; margin:1px 6px 0 0;}
+.popup-box .popup-header button.btn-popup-close {width:13px; height:13px; border-radius:50%; background:url(../images/space/ic_close.png) center center no-repeat #fff; background-size:7px; box-shadow:0 0 5px 5px rgba(0,0,0,.2); position:relative; float:right; top:10px;}
+.popup-box .popup-header button.btn-popup-close:focus {outline:none; box-shadow:0 0 0 2px rgba(73,131,255,.6);}
+.popup-box .popup-body {position:relative; float:left; width:calc(100% - 20px); padding:10px;}
+
+/* 기상특보 */
+ul.weather-news {display:inline-block; width:100%; height:100%;}
+ul.weather-news li {display:block; width:calc(100% - 20px); height:37px; padding:10px; border-radius:4px; background:#132b31; box-shadow:0 0 4px 4px rgba(0,0,0,.2); margin-bottom:10px;}
+ul.weather-news li:last-child {margin-bottom:0;}
+ul.weather-news li .news-list {position:relative;float:left;}
+ul.weather-news li .news-list span {position:relative; float:left; border-radius:4px; background:#0d6e8c; font-size:18px; font-weight:500; color:#fff; line-height:1em; display:flex; align-items:center; justify-content:center; margin-right:10px; width: 80px; height:37px;}
+ul.weather-news li .news-text {position:relative; float:left; height:100%; width: 360px;}
+ul.weather-news li .news-text p {display:inline-block; width:100%; text-align:left; font-size:14px; font-weight:500; color:#fff; line-height:1em;}
+ul.weather-news li .news-text span {display:inline-block; width:100%; text-align:left; font-size:12px; font-weight:400; color:#bcc7d3; line-height:1em;}
+
+
+.radar-video {display:block; width:330px; height:270px; border-radius:4px;}
+.radar-video-ctrl {display:block; width:100%; height:20px; margin-top:6px;}
+.radar-video-ctrl button {position:relative; float:left; width:20px; height:20px; border-radius:2px; margin-right:6px;}
+.radar-video-ctrl button.radar-slow {background:url(img/ic_popup-slow.png) center center no-repeat #0a0e1d; background-size:20px 20px;}
+.radar-video-ctrl button.radar-rewind {background:url(img/ic_popup-rewind.png) center center no-repeat #0a0e1d; background-size:20px 20px;}
+.radar-video-ctrl button.radar-onoff {background:url(img/ic_popup-onoff-off.png) center center no-repeat #0a0e1d; background-size:20px 20px;}
+.radar-video-ctrl button.radar-onoff.on {background:url(img/ic_popup-onoff-on.png) center center no-repeat #0a0e1d; background-size:20px 20px;}
+.radar-video-ctrl button.radar-next {background:url(img/ic_popup-onoff-off.png) center center no-repeat #0a0e1d; background-size:20px 20px;}
+.radar-video-ctrl button.radar-fast {background:url(img/ic_popup-fast.png) center center no-repeat #0a0e1d; background-size:20px 20px;}
+.radar-video-ctrl select {position:relative; float:left; width:180px; height:20px; border-radius:2px; background:url(img/ic_popup-select.png) 95% 48% no-repeat #0a0e1d; -webkit-appearance:none; -moz-appearance:none; appearance:none; border:0; font-size:10px; font-weight:400; color:#bcc7d3; line-height:1em; padding:0 6px;}
+.radar-video-ctrl select::-ms-expand {display:none;}
+
+/* 위성 영상 */
+.satellite-video {display:block; width:100%; height:270px; border-radius:4px; background:url(img/loading.jpg) 100% 100% no-repeat; overflow:hidden;}
+.satellite-video-ctrl {display:block; width:100%; height:20px; margin-top:6px;}
+.satellite-video-ctrl button {position:relative; float:left; width:20px; height:20px; border-radius:2px; margin-right:6px;}
+.satellite-video-ctrl button.satellite-slow {background:url(img/ic_popup-slow.png) center center no-repeat #0a0e1d; background-size:20px 20px;}
+.satellite-video-ctrl button.satellite-rewind {background:url(img/ic_popup-rewind.png) center center no-repeat #0a0e1d; background-size:20px 20px;}
+.satellite-video-ctrl button.satellite-onoff {background:url(img/ic_popup-onoff-off.png) center center no-repeat #0a0e1d; background-size:20px 20px;}
+.satellite-video-ctrl button.satellite-onoff.on {background:url(img/ic_popup-onoff-on.png) center center no-repeat #0a0e1d; background-size:20px 20px;}
+.satellite-video-ctrl button.satellite-next {background:url(img/ic_popup-onoff-off.png) center center no-repeat #0a0e1d; background-size:20px 20px;}
+.satellite-video-ctrl button.satellite-fast {background:url(img/ic_popup-fast.png) center center no-repeat #0a0e1d; background-size:20px 20px;}
+.satellite-video-ctrl select {position:relative; float:left; width:180px; height:20px; border-radius:2px; background:url(img/ic_popup-select.png) 95% 48% no-repeat #0a0e1d; -webkit-appearance:none; -moz-appearance:none; appearance:none; border:0; font-size:10px; font-weight:400; color:#bcc7d3; line-height:1em; padding:0 6px;}
+.satellite-video-ctrl select::-ms-expand {display:none;}

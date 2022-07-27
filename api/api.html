@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="api.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="radarDialog" title="레이더영상">
+	<div class="img-box radar-video">
+		<img src="img/loading.jpg" alt="icon"/>
+	</div>
+	<div class="radar-video-ctrl">
+		<div class="player-btn-box">
+			<button title="처음" role="first" class="btn-first radar-slow"></button>
+			<button title="이전" role="prev" class="btn-prev radar-rewind"></button>
+			<button title="재생" role="play" class="btn-play radar-onoff"></button>
+			<button title="다음" role="next" class="btn-next radar-next"></button>
+			<button title="마지막" role="last" class="btn-last radar-fast"></button>
+		</div>
+		<select name="imgSelect"></select>
+	</div>
+</div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="api.js"></script>
+    <script type="text/javascript" src="apiUtil.js"></script>
+</body>
+</html>
