@@ -22,6 +22,9 @@
     
     <script>
         
+        var excelFileName = null;
+        var sheetName = null;
+        
         //----------------------------------------- <엑셀 가져오기> --------------------------------------------
         var reader = new FileReader();
         var excelFileData = null;
@@ -31,6 +34,7 @@
         
         $excel_input.change(function(e){
             var files = e.target.files[0]; // input file 객체를 가져온다.
+            excelFileName = files.name;
             reader.readAsArrayBuffer(files);
         });
         
@@ -38,7 +42,7 @@
             var data = e.target.result;
             var workbook = XLSX.read(data, {type : 'array'});
             
-            var sheetName = workbook.SheetNames;
+            sheetName = workbook.SheetNames;
             var sheet = workbook.Sheets[sheetName];
             excelFileData = XLSX.utils.sheet_to_html(sheet);
             $displayExcel.show();
@@ -108,7 +112,7 @@
             if(table){
                 // CASE 대상 테이블이 존재하는 경우
                 // 엑셀 다운 (엑셀 파일명, 시트명, 내부데이터HTML)
-                excelDownload("엑셀파일명.xls", "시트명", table[0].outerHTML);
+                excelDownload("엑셀파일명.xls", sheetName, table[0].outerHTML);
             }
         }
         //----------------------------------------- </엑셀 다운로드> --------------------------------------------
