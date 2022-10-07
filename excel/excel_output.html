@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <style>    
+        table {width: 100%;}
+        table, th, td {border: 1px solid;}
+    </style>
+    <title>Document</title>
+</head>
+<body>
+   
+   <div class="page-content">
+       <table id="table01" border="1">
+           <caption>Excel Download</caption>
+           <thead>
+               <tr>
+                   <th></th>
+                   <th>sample</th>
+                   <th>sample</th>
+                   <th>sample</th>
+               </tr>
+           </thead>
+           
+            <tbody>
+               <tr>
+                   <th>sample</th>
+                   <td>Text</td>
+                   <td>Text</td>
+                   <td rowspan="2">Text</td>
+               </tr>
+
+               <tr>
+                   <th>sample</th>
+                   <td>Text</td>
+                   <td>Text</td>
+               </tr>
+               
+               <tr>
+                   <th>sample</th>
+                   <td>Text</td>
+                   <td>Text</td>
+                   <td>Text</td>
+               </tr>
+           </tbody>
+        </table>
+    </div>
+
+   
+    <input id="excelBtn" type="button" value="엑셀 다운로드">
+    
+    <script>
+        
+        var $excelBtn = $('#excelBtn')
+        
+        $excelBtn.click(function(){
+            download();
+        });
+        
+        function excelDownload(fileName, sheetName, sheetHtml){
+            var html = '<html xmlns:x="urn:schemas-microsoft-com:office:excel">';
+            html += '<head>';
+            html += '<meta http-equiv="content-type" content="application/vnd.ms-excel; charset=UTF-8">';    
+            html += '<xml>';
+            html += '<x:ExcelWorkbook>';
+            html += '<x:ExcelWorksheets>';
+            html += '<x:ExcelWorksheet>';
+            html += '<x:Name>'+ sheetName +'</x:Name>';    //시트 이름
+            html += '<x:WorksheetOptions>';
+            html += '<x:Panes></x:Panes>';
+            html += '</x:WorksheetOptions>';
+            html += '</x:ExcelWorksheet>';    
+            html += '</x:ExcelWorksheets>';
+            html += '</x:ExcelWorkbook>';
+            html += '</xml>';
+            html += '</head>';
+            html += '<body>'; 
+            // ----------------------------- <시트 내용 부분> ------------------------------------
+            html += sheetHtml;
+            // ----------------------------- </시트 내용 부분> ------------------------------------
+            html += '</body>'
+            html += '</html>'
+            
+            var data_type = 'data:application/vnd.ms-excel';
+            var ua = window.navigator.userAgent;
+            var blob = new Blob([html], {type: "application/csv;charset=utf-8;"});
+            
+            if((ua.indexOf("MSIE") > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) && window.navigator.msSaveBlob){
+                // ie이고 msSaveBlob 기능을 지원하는 경우
+                navigator.msSaveBlob(blob, fileName);
+            } else{
+                // ie가 아닌 경우 (바로 다운이 되지 않기 때문에 클릭 버튼을 생성하여 임의로 클릭을 수행하도록 처리)
+                var anchor = window.document.createElement('a');
+                anchor.href = window.URL.createObjectURL(blob);
+                anchor.download = fileName;
+                document.body.appendChild(anchor);
+                anchor.click();
+                
+                document.body.removeChild(anchor) // 클릭 실행 후 요소를 삭제한다.
+            }
+        }
+        
+        function download(){
+            // 대상 테이블을 가져옴
+            var table = document.getElementById("table01");
+            
+            if(table){
+                // CASE 대상 테이블이 존재하는 경우
+                // 엑셀 다운 (엑셀 파일명, 시트명, 내부데이터HTML)
+                excelDownload("엑셀파일명.xls", "시트명", table.outerHTML);
+            }
+        }
+        
+    </script>
+</body>
+</html>
